@@ -1,0 +1,37 @@
+# =========================
+# Java / Spring Boot
+# =========================
+target/
+*.log
+*.class
+
+# =========================
+# Maven
+# =========================
+.mvn/wrapper/maven-wrapper.jar
+
+# =========================
+# IDEs
+# =========================
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+
+# =========================
+# Docker (optional later)
+# =========================
+docker-compose.override.yml%                                        
