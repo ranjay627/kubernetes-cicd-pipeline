@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write
+  contents: read
+  
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -52,3 +56,21 @@ jobs:
         run: |
           docker tag $IMAGE_NAME:$TAG $IMAGE_NAME:latest
           docker push $IMAGE_NAME:latest
+
+      # 9. Configure AWS using OIDC (NO secrets)
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ap-south-1
+
+      # 10. Update kubeconfig for EKS
+      - name: Update kubeconfig
+        run: |
+          aws eks update-kubeconfig --name k8s-cicd-cluster --region ap-south-1
+
+      # 11. Deploy to EKS
+      - name: Deploy to EKS
+        run: |
+          kubectl set image deployment/k8s-demo \
+          k8s-demo=$IMAGE_NAME:$TAG
