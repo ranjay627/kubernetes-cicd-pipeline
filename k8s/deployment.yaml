@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: k8s-demo
-          image: ranjay627/k8s-demo:v1
+          image: ranjay627/k8s-cicd-demo:latest
           ports:
             - containerPort: 8080
