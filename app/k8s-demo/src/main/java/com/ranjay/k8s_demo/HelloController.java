@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello from Kubernetes 🚀";
+        return "Hello from EKS CI/CD 🚀 v2";
     }
 }
