@@ -36,7 +36,7 @@ Code → GitHub Actions → Docker Build → Docker Hub → AWS EKS → Kubernet
 
 ---
 
-## 📸 Proof of Deployment
+## 📸 CI/CD Execution Proof
 
 ### CI/CD Pipeline Success
 ![Pipeline](screenshots/04-ci-cd-eks-success.png)
@@ -44,11 +44,21 @@ Code → GitHub Actions → Docker Build → Docker Hub → AWS EKS → Kubernet
 ### Kubernetes Rolling Update
 ![Rolling Update](screenshots/05-eks-rolling-update.png)
 
-### Application Running on EKS
-![App](screenshots/03-eks-app.png)
-
-### Application Updated via CI/CD (Version Change)
+### Application Updated via CI/CD
 ![App Update](screenshots/06-app-version-update.png)
+
+---
+
+## ⚙️ Kubernetes Deployment Details
+
+### Pods Running in EKS
+![Pods](screenshots/01-eks-pods.png)
+
+### Service (LoadBalancer)
+![Service](screenshots/02-eks-service.png)
+
+### Application Accessible via LoadBalancer
+![App](screenshots/03-eks-app.png)
 
 ---
 
